@@ -522,5 +522,52 @@ footer small {
 .nasa-photo-card a:hover {
   text-decoration: underline;
 }
+/* Planet Weight Calculator */
+
+.calculator-box {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #17152a;
+  border: 1px solid #a88aff55;
+  border-radius: 18px;
+  text-align: center;
+}
+
+#earthWeight {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 18px;
+  border: 1px solid #a88aff;
+  border-radius: 10px;
+  background: #0d0b1c;
+  color: white;
+  font-size: 16px;
+}
+
+#weightResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.weight-card {
+  padding: 16px;
+  background: #24203d;
+  border-radius: 12px;
+  border: 1px solid #a88aff35;
+}
+
+.weight-card h3 {
+  color: #d7c5ff;
+  margin-bottom: 8px;
+}
+
+.weight-card p {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
 
 

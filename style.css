@@ -406,3 +406,59 @@ footer small {
     width: 100%;
   }
 }
+
+/* Galaxy Explorer */
+
+.galaxy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.galaxy-card {
+  background: linear-gradient(145deg, #1c1534, #0b1022);
+  border: 1px solid #a88aff35;
+  border-radius: 20px;
+  padding: 25px;
+  transition: .3s;
+}
+
+.galaxy-card:hover {
+  transform: translateY(-8px);
+  border-color: #b99aff;
+  box-shadow: 0 12px 35px #874dff25;
+}
+
+.galaxy-art {
+  height: 135px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  font-size: 65px;
+  margin-bottom: 20px;
+  background: radial-gradient(circle, #56338b66, #111326);
+}
+
+.andromeda { background: radial-gradient(circle, #593b9c, #111326); }
+.milkyway { background: radial-gradient(circle, #304d91, #111326); }
+.nebula { background: radial-gradient(circle, #9c397c66, #111326); }
+.blackhole { background: radial-gradient(circle, #4b276d, #050611); }
+
+.galaxy-card h3 {
+  color: #d7c5ff;
+  margin-bottom: 10px;
+}
+
+.galaxy-card p {
+  color: #aaa7bd;
+  font-size: 13px;
+  line-height: 1.7;
+  min-height: 65px;
+}
+
+#galaxyInfo {
+  margin-top: 30px;
+}
+

@@ -199,5 +199,80 @@ function exploreGalaxy(name) {
   });
 }
 
+// NEXORA NASA Space Gallery
+
+async function loadNasaImages(searchTerm = "galaxy") {
+  const gallery = document.getElementById("nasaGalleryGrid");
+  const status = document.getElementById("galleryStatus");
+
+  gallery.innerHTML = "";
+  status.textContent = "Searching NASA's image collection...";
+
+  try {
+    const response = await fetch(
+      `https://images-api.nasa.gov/search?q=${encodeURIComponent(searchTerm)}&media_type=image&page_size=12`
+    );
+
+    if (!response.ok) {
+      throw new Error("NASA image service is unavailable.");
+    }
+
+    const data = await response.json();
+    const items = data.collection.items || [];
+
+    const photos = items.filter(item =>
+      item.links && item.links.some(link => link.rel === "preview")
+    );
+
+    if (photos.length === 0) {
+      status.textContent = "No photographs found. Try another category.";
+      return;
+    }
+
+    status.textContent = `Showing ${photos.length} NASA photographs about ${searchTerm}.`;
+
+    photos.forEach(item => {
+      const details = item.data[0];
+      const image = item.links.find(link => link.rel === "preview");
+
+      const card = document.createElement("article");
+      card.className = "nasa-photo-card";
+
+      const photo = document.createElement("img");
+      photo.src = image.href;
+      photo.alt = details.title || "NASA space photograph";
+      photo.loading = "lazy";
+
+      const title = document.createElement("h3");
+      title.textContent = details.title || "Space discovery";
+
+      const description = document.createElement("p");
+      description.textContent =
+        (details.description || "A photograph from NASA's image collection.")
+        .slice(0, 150) + "...";
+
+      const link = document.createElement("a");
+      link.href = `https://images.nasa.gov/details/${encodeURIComponent(details.nasa_id)}`;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "View NASA details ↗";
+
+      const linkArea = document.createElement("p");
+      linkArea.appendChild(link);
+
+      card.append(photo, title, description, linkArea);
+      gallery.appendChild(card);
+    });
+
+  } catch (error) {
+    status.textContent =
+      "NASA images could not load right now. Please check your internet connection and try again.";
+  }
+}
+
+// Load the first gallery automatically
+loadNasaImages("galaxy");
+
+
 
                 

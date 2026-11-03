@@ -272,6 +272,49 @@ async function loadNasaImages(searchTerm = "galaxy") {
 
 // Load the first gallery automatically
 loadNasaImages("galaxy");
+// NEXORA Planet Weight Calculator
+
+function calculatePlanetWeight() {
+  const input = document.getElementById("earthWeight");
+  const results = document.getElementById("weightResults");
+
+  const earthWeight = Number(input.value);
+
+  if (!input.value || !Number.isFinite(earthWeight) || earthWeight <= 0) {
+    results.innerHTML = "<p>Please enter a valid weight!</p>";
+    return;
+  }
+
+  const planets = [
+    { name: "Mercury", gravity: 0.38, emoji: "☿️" },
+    { name: "Venus", gravity: 0.91, emoji: "♀️" },
+    { name: "Earth", gravity: 1, emoji: "🌍" },
+    { name: "Mars", gravity: 0.38, emoji: "🔴" },
+    { name: "Jupiter", gravity: 2.34, emoji: "🪐" },
+    { name: "Saturn", gravity: 1.06, emoji: "🪐" },
+    { name: "Uranus", gravity: 0.92, emoji: "🔵" },
+    { name: "Neptune", gravity: 1.19, emoji: "🌊" },
+    { name: "Moon", gravity: 0.166, emoji: "🌙" }
+  ];
+
+  results.innerHTML = "";
+
+  planets.forEach(planet => {
+    const calculatedWeight = (earthWeight * planet.gravity).toFixed(2);
+
+    const card = document.createElement("div");
+    card.className = "weight-card";
+
+    const heading = document.createElement("h3");
+    heading.textContent = `${planet.emoji} ${planet.name}`;
+
+    const value = document.createElement("p");
+    value.textContent = `${calculatedWeight} kg`;
+
+    card.append(heading, value);
+    results.appendChild(card);
+  });
+}
 
 
 

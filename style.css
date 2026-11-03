@@ -1,0 +1,290 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050611;
+  color: #f4f1ff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+    radial-gradient(1px 1px at 70% 20%, #b9a4ff, transparent),
+    radial-gradient(2px 2px at 80% 70%, #fff, transparent),
+    radial-gradient(1px 1px at 40% 80%, #b9a4ff, transparent);
+  background-size: 220px 220px;
+  opacity: .6;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 8%;
+  border-bottom: 1px solid #ffffff12;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  color: #c6a5ff;
+  font-size: 23px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #c7c3d9;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.nav-links a:hover {
+  color: #c6a5ff;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 70px 20px;
+  background: radial-gradient(ellipse at 50% 55%, #43216b55, transparent 55%);
+}
+
+.eyebrow {
+  color: #b99aff;
+  letter-spacing: 3px;
+  font-size: 11px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(35px, 7vw, 76px);
+  line-height: 1.25;
+  letter-spacing: 2px;
+}
+
+h1 span, h2 span {
+  color: #b99aff;
+}
+
+.intro, .section-intro {
+  color: #aaa7bd;
+  max-width: 550px;
+  margin: 20px auto;
+  line-height: 1.8;
+}
+
+.main-btn {
+  display: inline-block;
+  border: 1px solid #b99aff;
+  border-radius: 30px;
+  padding: 14px 28px;
+  color: white;
+  background: #9c65ee22;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.main-btn:hover {
+  background: #9c65ee;
+}
+
+.planet-art {
+  font-size: 110px;
+  margin: 25px;
+  filter: drop-shadow(0 0 35px #9c65ee);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% { transform: translateY(-18px) rotate(8deg); }
+}
+
+.scroll-text {
+  color: #77728c;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+section {
+  padding: 100px 9%;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(25px, 4vw, 40px);
+}
+
+.planet-grid, .mission-grid, .universe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.planet-card, .mission, .universe-grid article, .quiz-box, .info-panel {
+  background: linear-gradient(145deg, #17152a, #0c1020);
+  border: 1px solid #a88aff25;
+  border-radius: 18px;
+  padding: 25px;
+  transition: .3s;
+}
+
+.planet-card {
+  color: white;
+  cursor: pointer;
+}
+
+.planet-card:hover, .mission:hover, .universe-grid article:hover {
+  transform: translateY(-7px);
+  border-color: #a88aff;
+  box-shadow: 0 10px 35px #8750ff18;
+}
+
+.planet-card .emoji, .mission-icon, .universe-grid article div {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.planet-card h3, .mission h3, .universe-grid h3 {
+  margin-bottom: 10px;
+  color: #d4c1ff;
+}
+
+.planet-card p, .mission p, .universe-grid p {
+  font-size: 13px;
+  color: #aaa7bd;
+  line-height: 1.7;
+}
+
+.info-panel {
+  max-width: 700px;
+  margin: 25px auto 0;
+  color: #c9c1df;
+  line-height: 1.8;
+}
+
+.quiz-box {
+  max-width: 650px;
+  margin: 35px auto 0;
+}
+
+.quiz-box #question {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.answers button {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #a88aff55;
+  background: #17152a;
+  color: white;
+  cursor: pointer;
+}
+
+.answers button:hover {
+  background: #7044a8;
+}
+
+#quizResult {
+  margin-top: 20px;
+  color: #c6a5ff;
+}
+
+#nextBtn[hidden] {
+  display: none;
+}
+
+.favourites-list {
+  margin: 30px auto;
+  max-width: 600px;
+  color: #c6a5ff;
+  line-height: 2;
+}
+
+.favourite-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #ffffff18;
+}
+
+.favourite-item button {
+  background: transparent;
+  border: none;
+  color: #ff9cba;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 55px 20px;
+  border-top: 1px solid #ffffff18;
+  color: #aaa7bd;
+}
+
+footer h2 {
+  color: #c6a5ff;
+  margin-bottom: 12px;
+}
+
+footer p {
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+footer small {
+  font-size: 10px;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .nav-links {
+    gap: 13px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  section {
+    padding: 75px 6%;
+  }
+  .answers {
+    grid-template-columns: 1fr;
+  }
+}

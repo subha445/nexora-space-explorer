@@ -462,3 +462,65 @@ footer small {
   margin-top: 30px;
 }
 
+/* NASA Space Gallery */
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.nasa-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.nasa-photo-card {
+  overflow: hidden;
+  border-radius: 16px;
+  background: #17152a;
+  border: 1px solid #a88aff35;
+  text-align: left;
+  transition: .3s;
+}
+
+.nasa-photo-card:hover {
+  transform: translateY(-6px);
+  border-color: #b99aff;
+}
+
+.nasa-photo-card img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: #101020;
+}
+
+.nasa-photo-card h3 {
+  color: #d7c5ff;
+  font-size: 15px;
+  padding: 15px 15px 5px;
+}
+
+.nasa-photo-card p {
+  color: #aaa7bd;
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 0 15px 18px;
+}
+
+.nasa-photo-card a {
+  color: #c6a5ff;
+  text-decoration: none;
+}
+
+.nasa-photo-card a:hover {
+  text-decoration: underline;
+}
+
+

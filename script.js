@@ -164,4 +164,40 @@ document.querySelectorAll(".orbit-planet").forEach(planet => {
   });
 });
 
+// NEXORA Galaxy Explorer
+
+const galaxyFacts = {
+  andromeda: {
+    title: "🌌 Andromeda Galaxy",
+    fact: "Andromeda is the nearest major galaxy to the Milky Way. It is approximately 2.5 million light-years away and contains a huge number of stars."
+  },
+  milkyway: {
+    title: "✨ Milky Way",
+    fact: "Our home galaxy is a barred spiral galaxy. The Solar System is located in one of its spiral arms."
+  },
+  orion: {
+    title: "🌠 Orion Nebula",
+    fact: "The Orion Nebula is a star-forming region about 1,300 light-years away. New stars are born inside its clouds of gas and dust."
+  },
+  blackhole: {
+    title: "🕳️ Black Holes",
+    fact: "A black hole is a region of space where gravity is so strong that nothing, not even light, can escape from within its event horizon."
+  }
+};
+
+function exploreGalaxy(name) {
+  const galaxy = galaxyFacts[name];
+
+  document.getElementById("galaxyInfo").innerHTML = `
+    <h3>${galaxy.title}</h3>
+    <p>${galaxy.fact}</p>
+  `;
+
+  document.getElementById("galaxyInfo").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+
                 

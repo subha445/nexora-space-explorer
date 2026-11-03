@@ -137,4 +137,31 @@ nextBtn.addEventListener("click", () => {
 });
 
 showQuestion();
+
+// NEXORA Interactive Solar System
+
+const spaceFacts = {
+  Mercury: "The smallest planet. It is closest to the Sun and has a very short year.",
+  Venus: "The hottest planet in our solar system, with a thick atmosphere.",
+  Earth: "Our home planet! It has liquid water on its surface and supports life.",
+  Mars: "The Red Planet. Scientists are exploring it to understand its history.",
+  Jupiter: "The largest planet in our solar system. It has a giant storm called the Great Red Spot.",
+  Saturn: "A gas giant famous for its spectacular rings made mostly of ice and rock.",
+  Uranus: "An ice giant that rotates almost on its side.",
+  Neptune: "A distant ice giant known for its powerful winds."
+};
+
+document.querySelectorAll(".orbit-planet").forEach(planet => {
+  planet.addEventListener("click", () => {
+    const name = planet.dataset.planet;
+    document.getElementById("spaceInfo").innerHTML = `
+      <h3>🪐 ${name}</h3>
+      <p>${spaceFacts[name]}</p>
+      <button class="main-btn" onclick="savePlanet('${name}')">
+        ♡ Save Discovery
+      </button>
+    `;
+  });
+});
+
                 

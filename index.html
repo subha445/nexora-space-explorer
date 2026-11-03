@@ -178,6 +178,23 @@
       <p class="section-intro">Save your favourite planets here.</p>
       <div id="favouritesList" class="favourites-list">No favourites saved yet.</div>
     </section>
+    
+<section id="nasa-gallery">
+  <p class="eyebrow">08 — NASA IMAGE COLLECTION</p>
+  <h2>NASA <span>Space Gallery</span></h2>
+  <p class="section-intro">Explore real photographs from NASA's space image collection.</p>
+
+  <div class="gallery-filters">
+    <button class="main-btn" onclick="loadNasaImages('galaxy')">Galaxies</button>
+    <button class="main-btn" onclick="loadNasaImages('nebula')">Nebulae</button>
+    <button class="main-btn" onclick="loadNasaImages('planet')">Planets</button>
+    <button class="main-btn" onclick="loadNasaImages('moon')">Moon</button>
+  </div>
+
+  <p id="galleryStatus" class="section-intro">Loading NASA photographs...</p>
+  <div id="nasaGalleryGrid" class="nasa-gallery-grid"></div>
+</section>
+
   </main>
 
   <footer>

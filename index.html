@@ -194,7 +194,28 @@
   <p id="galleryStatus" class="section-intro">Loading NASA photographs...</p>
   <div id="nasaGalleryGrid" class="nasa-gallery-grid"></div>
 </section>
+<section id="planet-calculator">
+  <p class="eyebrow">09 — COSMIC CALCULATOR</p>
+  <h2>Planet <span>Weight Calculator</span></h2>
+  <p class="section-intro">
+    Discover how your weight changes across the Solar System!
+  </p>
 
+  <div class="calculator-box">
+    <input
+      type="number"
+      id="earthWeight"
+      placeholder="Enter your weight (kg)"
+      min="1"
+    >
+
+    <button class="main-btn" onclick="calculatePlanetWeight()">
+      Calculate
+    </button>
+
+    <div id="weightResults"></div>
+  </div>
+</section>
   </main>
 
   <footer>
